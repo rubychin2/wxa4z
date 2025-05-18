@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+<title>Watson Assistant Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .WebChatContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="WebChatContainer"/>
+
+<script>
+const element = document.querySelector('.WebChatContainer');
+
+window.watsonAssistantChatOptions = {
+   integrationID: "1060977a-9d62-4742-9427-9f66d44cbc5d", // The ID of this integration.
+   region: "wxo-us-south", // The region your integration is hosted in.
+   serviceInstanceID: "58747ec4-442b-44d1-9eed-e65dc20288cf", // The ID of your service instance.
+    element,
+
+    openChatByDefault: true,
+    hideCloseButton: true,
+
+    layout: {
+      showFrame: false,
+      hasContentMaxWidth: true,
+    },
+
+    onLoad: async (instance) => {
+      window.WACInstance = instance;
+      await instance.render();
+    }
+};
+
+setTimeout(function() {
+    const t = document.createElement('script');
+    t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
+    document.head.appendChild(t);
+});
+</script>
+
+</body>
+</html>
