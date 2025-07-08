@@ -18,18 +18,33 @@
 <div class="WebChatContainer"/>
 
 <script>
-  window.watsonAssistantChatOptions = {
-  integrationID: "6d78da85-ee04-43d3-9c06-ce7879192740", // The ID of this integration.
-  region: "wxo-us-south", // The region your integration is hosted in.
-  serviceInstanceID: "35812d86-1e07-4d8f-9e86-dbded8e14ef8", // The ID of your service instance.
-  orchestrateUIAgentExtensions: false, // If you wish to enable optional UI Agent extensions.
-  onLoad: async (instance) => { await instance.render(); }
+const element = document.querySelector('.WebChatContainer');
+
+window.watsonAssistantChatOptions = {
+    integrationID: "6d78da85-ee04-43d3-9c06-ce7879192740", // The ID of this integration.
+    region: "wxo-us-south", // The region your integration is hosted in.
+    serviceInstanceID: "35812d86-1e07-4d8f-9e86-dbded8e14ef8", // The ID of your service instance.
+    element,
+
+    openChatByDefault: true,
+    hideCloseButton: true,
+
+    layout: {
+      showFrame: false,
+      hasContentMaxWidth: true,
+    },
+
+    onLoad: async (instance) => {
+      window.WACInstance = instance;
+      await instance.render();
+    }
 };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+
+setTimeout(function() {
+    const t = document.createElement('script');
+    t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
     document.head.appendChild(t);
-  });
+});
 </script>
 
 </body>
