@@ -19,11 +19,12 @@
 
 <script>
 
+const element = document.querySelector('.WebChatContainer');
+
 window.watsonAssistantChatOptions = {
   integrationID: "e294fa21-7de6-4502-957b-00f35015a12d", // The ID of this integration.
   region: "wxo-us-south", // The region your integration is hosted in.
   serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
-  orchestrateUIAgentExtensions: false, // If you wish to enable optional UI Agent extensions.
   onLoad: async (instance) => { await instance.render(); }
 };
   setTimeout(function(){
