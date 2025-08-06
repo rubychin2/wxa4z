@@ -65,13 +65,24 @@ setTimeout(function() {
         required: true,
         placeholder: "Name"
       },
-      {
+     {
+        type: "select",
+        label: "What do you think about the chatbot features?",
+        name: "rating",
+        options: [
+            {label: "Great", value: 2},
+            {label: "Good", value: 1},
+            {label: "OK", value: 0},
+            {label: "Not Great", value: -1},
+            {label: "Terrible", value: -2},
+        ]
+    },
+    {
         type: "textarea",
         label: "Message:",
         name: "message",
-        placeholder: "Hope to gain your feedback!",
+        placeholder: "How can we improve?",
       },
-      
       { type: "submit" }      
     ],
     styles: {
