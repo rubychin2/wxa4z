@@ -5,17 +5,24 @@
 
 <style>
   .WebChatContainer {
-    position: relative;
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    z-index: 1;
+  }
+
+  #feedbackform {
+    position: absolute;
+    z-index: 2;
   }
 </style>
 </head>
 <body>
 
  <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
+<div id="feedbackform">
 <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
 <script>
   /* paste this line in verbatim */
@@ -62,7 +69,7 @@
     }
   });
 </script>
-
+</div>
 
 <div class="WebChatContainer"/>
 <script>
