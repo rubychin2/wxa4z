@@ -15,39 +15,6 @@
 </head>
 <body>
 
-<div class="WebChatContainer"/>
-
-<script>
-const element = document.querySelector('.WebChatContainer');
-
-window.watsonAssistantChatOptions = {
-    integrationID: "e294fa21-7de6-4502-957b-00f35015a12d", // The ID of this integration.
-    region: "wxo-us-south", // The region your integration is hosted in.
-    serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
-    element,
-
-    openChatByDefault: true,
-    hideCloseButton: true,
-
-    layout: {
-      showFrame: false,
-      hasContentMaxWidth: true,
-    },
-
-    onLoad: async (instance) => {
-      window.WACInstance = instance;
-      await instance.render();
-    }
-};
-
-setTimeout(function() {
-    const t = document.createElement('script');
-    t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
-    document.head.appendChild(t);
-});
-</script>
-
-
  <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
 <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
 <script>
@@ -94,6 +61,38 @@ setTimeout(function() {
       }
     }
   });
+</script>
+
+
+<div class="WebChatContainer"/>
+<script>
+const element = document.querySelector('.WebChatContainer');
+
+window.watsonAssistantChatOptions = {
+    integrationID: "e294fa21-7de6-4502-957b-00f35015a12d", // The ID of this integration.
+    region: "wxo-us-south", // The region your integration is hosted in.
+    serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
+    element,
+
+    openChatByDefault: true,
+    hideCloseButton: true,
+
+    layout: {
+      showFrame: false,
+      hasContentMaxWidth: true,
+    },
+
+    onLoad: async (instance) => {
+      window.WACInstance = instance;
+      await instance.render();
+    }
+};
+
+setTimeout(function() {
+    const t = document.createElement('script');
+    t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
+    document.head.appendChild(t);
+});
 </script>
 
 </body>
