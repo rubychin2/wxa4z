@@ -5,16 +5,26 @@
 
 <style>
   .WebChatContainer {
-    position: relative;
-    z-index: 1;
+    z-index: 0;
   }
-@media screen and (max-width:600px){
+@media (max-width:480px){
   #feedbackform {
-    position: absolute;
-    z-index: 5;
-    display: block;
+    width: 276px;
   }
 }
+
+#feedbackform {
+    position: fixed;
+    width: 320px;
+    right: 22px;
+    bottom: 320px;
+    transform: translate(0, 5%);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    cursor: default;
+    z-index: 5;
+  }
 
 </style>
 </head>
