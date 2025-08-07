@@ -26,6 +26,8 @@
 
   .WebChatContainer {
     z-index: 0;
+    width: 98%;
+    align-content: center;
   }
 
 </style>
@@ -95,6 +97,10 @@ window.watsonAssistantChatOptions = {
     openChatByDefault: true,
     hideCloseButton: true,
 
+    layout: {
+      showFrame: false,
+      hasContentMaxWidth: true,
+    },
 
     onLoad: async (instance) => {
       window.WACInstance = instance;
