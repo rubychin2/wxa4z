@@ -4,16 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-  .WebChatContainer {
-    z-index: 0;
-  }
+  
 @media (max-width:480px){
   #feedbackform {
     width: 276px;
   }
 }
 
-#feedbackform {
+.feedbackform {
     position: fixed;
     width: 320px;
     right: 22px;
@@ -26,12 +24,16 @@
     z-index: 5;
   }
 
+  .WebChatContainer {
+    z-index: 0;
+  }
+
 </style>
 </head>
 <body>
 
  <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
-<div id="feedbackform">
+<div class="feedbackform">
 <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
 <script>
   /* paste this line in verbatim */
