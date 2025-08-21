@@ -4,7 +4,6 @@
   <title>Watson Assistant Chat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -36,6 +35,10 @@
     h4,
     h5 {
       font-family: "Raleway", sans-serif
+    }
+
+    .WebChatContainer {
+      z-index: 0;
     }
 
     .closebtn {
@@ -115,7 +118,7 @@
     </nav>
   </div>
 
-  <div id="wxa4z">
+  <div class="WebChatContainer" id="wxa4z">
     <script>
       const element = document.querySelector('.WebChatContainer');
 
@@ -124,9 +127,6 @@
         region: "wxo-us-south", // The region your integration is hosted in.
         serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
         element,
-
-        openChatByDefault: true,
-        hideCloseButton: true,
 
         layout: {
           showFrame: false,
