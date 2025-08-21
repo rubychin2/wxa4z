@@ -113,39 +113,14 @@
       style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
       <h3 class="w3-padding-64 w3-center"><b>Z COMMUNITY DEMO</b></h3>
       <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-      <a href="#wxa4z" onclick="w3_close()" class="w3-bar-item w3-button">WXA4Z</a>
       <a href="#feedback" onclick="w3_close()" class="w3-bar-item w3-button">YOUR FEEDBACK</a>
+      <a href="#wxa4z" onclick="w3_close()" class="w3-bar-item w3-button">WXA4Z</a>
     </nav>
   </div>
 
-  <div class="WebChatContainer" id="wxa4z">
-    <script>
-      const element = document.querySelector('.WebChatContainer');
-
-      window.watsonAssistantChatOptions = {
-        integrationID: "e294fa21-7de6-4502-957b-00f35015a12d", // The ID of this integration.
-        region: "wxo-us-south", // The region your integration is hosted in.
-        serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
-        element,
-
-        layout: {
-          showFrame: false,
-          hasContentMaxWidth: true,
-        },
-
-        onLoad: async (instance) => {
-          window.WACInstance = instance;
-          await instance.render();
-        }
-      };
-
-      setTimeout(function () {
-        const t = document.createElement('script');
-        t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
-        document.head.appendChild(t);
-      });
-    </script>
-  </div>
+  
+  
+  
 
 
   <!-- Feedback section -->
@@ -187,6 +162,37 @@
       </form>
     </div>
   </div>
+
+
+
+<div class="WebChatContainer" id="wxa4z">
+    <script>
+      const element = document.querySelector('.WebChatContainer');
+      window.watsonAssistantChatOptions = {
+        integrationID: "e294fa21-7de6-4502-957b-00f35015a12d", // The ID of this integration.
+        region: "wxo-us-south", // The region your integration is hosted in.
+        serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
+        element,
+
+        layout: {
+          showFrame: false,
+          hasContentMaxWidth: true,
+        },
+
+        onLoad: async (instance) => {
+          window.WACInstance = instance;
+          await instance.render();
+        }
+      };
+
+      setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
+        document.head.appendChild(t);
+      });
+    </script>
+</div>
+
 
 </body>
 
