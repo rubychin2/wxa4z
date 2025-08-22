@@ -107,7 +107,7 @@
 </head>
 
 <body>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <div>
     <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
       style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
@@ -118,33 +118,7 @@
     </nav>
   </div>
 
-  <div class="WebChatContainer" id="wxa4z">
-    <script>
-       const element = document.querySelector('.WebChatContainer');
-      window.watsonAssistantChatOptions = {
-        integrationID: "e294fa21-7de6-4502-957b-00f35015a12d", // The ID of this integration.
-        region: "wxo-us-south", // The region your integration is hosted in.
-        serviceInstanceID: "6bd02d54-09ec-4c19-8976-4d28562d10af", // The ID of your service instance.
-        element,
-
-        layout: {
-          showFrame: false,
-          hasContentMaxWidth: true,
-        },
-
-        onLoad: async (instance) => {
-          //window.WACInstance = instance;
-          await instance.render();
-        }
-      };
-
-      setTimeout(function () {
-        const t = document.createElement('script');
-        t.src = 'https://web-chat.global.assistant.test.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';
-        document.head.appendChild(t);
-      });
-    </script>
-  </div>
+  
 
   <!-- Feedback section -->
   <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="feedback">
@@ -171,7 +145,7 @@
 
           <input type="radio" name="stars" id="star-b" value='4' />
           <label for="star-b"></label>
-
+ 
           <input type="radio" name="stars" id="star-c" value='3' />
           <label for="star-c"></label>
 
