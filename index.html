@@ -102,6 +102,7 @@
     /* set full star shape for checked label and those that come after it */
     .star-rating input:checked~label:before {
       content: '\2605';
+    
     }
   </style>
 </head>
@@ -111,14 +112,17 @@
   <div>
     <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
       style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
-      <h3 class="w3-padding-64 w3-center"><b>Z COMMUNITY DEMO</b></h3>
+      <h3 class="w3-padding-64 w3-center"><b>Z COMMUNITY</b></h3>
       <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-      <a href="#wxa4z" onclick="w3_close()" class="w3-bar-item w3-button">WXA4Z</a>
-      <a href="#feedback" onclick="w3_close()" class="w3-bar-item w3-button">YOUR FEEDBACK</a>
+      <a href="#agenda" onclick="w3_close()" class="w3-bar-item w3-button">Event Agenda</a>
+      <a href="#wxa4z" onclick="w3_close()" class="w3-bar-item w3-button">WXA4Z (MVP): Let's Cocreate</a>
+      <a href="#feedback" onclick="w3_close()" class="w3-bar-item w3-button">Your Feedback</a>
     </nav>
   </div>
 
   <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="wxa4z"></div>
+  <p id="explain">The launcher on the bottom right reveals IBM watsonx Assistant for Z chatbot. We hope to codesign and build the best-fit "Minimum Viable Product (MVP)" together with you. </p>
+  
   <script>
     window.watsonAssistantChatOptions = {
       // A UUID like '1d7e34d5-3952-4b86-90eb-7c7232b9b540' included in the embed code.
@@ -132,7 +136,7 @@
         instance.render();
       },
       showLauncher: true, // Hide the web chat launcher, you will open the WebView from your mobile application
-      openChatByDefault: false, // When the web chat WebView is opened, the web chat will already be open and ready to go.
+      openChatByDefault: true, // When the web chat WebView is opened, the web chat will already be open and ready to go.
       hideCloseButton: false, // And the web chat will not show a close button, instead relying on the controls to close the WebView
       showRestartButton: true
     };
@@ -144,21 +148,25 @@
   <!-- Feedback section -->
   <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="feedback">
     <div class="w3-content" style="max-width:600px">
-      <h4 class="w3-center"><b>Tell Me What You Think</b></h4>
-      <p>Thank you for attending the event. Your feedback is important.</p>
+      <h4 class="w3-center"><b>WXA4Z Use Case Exploration</b></h4>
+      <p>Let's explore your use cases with watsonx Assistant for Z.</p>
       <form action="https://formspree.io/f/mwpqdzov" target="_blank" method="POST">
         <!-- used to be action action="connect.php" but change to formspree to make the process easier-->
         <div class="w3-section">
           <label>Name</label>
-          <input class="w3-input w3-border" type="text" name="name" required>
+          <input class="w3-input w3-border" type="text" name="name">
         </div>
         <div class="w3-section">
-          <label>Which session do you like the most</label>
+          <label>Which use case do you try to explore</label>
           <input class="w3-input w3-border" type="text" name="comments" required>
         </div>
         <div class="w3-section">
-          <label>Comments</label>
-          <textarea class='w3-input w3-border' id='fb-comment' name='comments' required></textarea>
+          <label>What feature can be enhanced/added to the product</label>
+          <textarea class='w3-input w3-border' type="text" name='comments' required></textarea>
+        </div>
+        <div class="w3-section">
+          <label>Other Comments</label>
+          <textarea class='w3-input w3-border' id='fb-comment' name='comments' ></textarea>
         </div>
         <div class="star-rating">
           <input type="radio" name="stars" id="star-a" value='5' />
